@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Navbar, Container, Offcanvas, Nav, Form, Button } from "react-bootstrap";
+import { ElementsContext } from "../ElementsContext";
 import "./header.css";
 
 const Header = () => {
-  const [algorithm, setAlgorithm] = useState(null);
-  const [open, setOpen] = useState(false);
+  const { arraySize, setArraySize, algorithm, setAlgorithm } = useContext(ElementsContext);
   const sortingAlgorithms = ["Bubble Sort", "Selection Sort", "Insertion Sort", "Merge Sort"];
   const size = ["5", "10", "25", "50", "75", "100"];
   return (
@@ -31,6 +31,8 @@ const Header = () => {
                 aria-label="Algorithm Type"
                 bsPrefix="menu-header"
                 className="bg-transparent text-white text-opacity-75 mx-2 algo-dropdown"
+                value={algorithm}
+                onChange={(e) => setAlgorithm(e.target.value)}
               >
                 <option selected disabled className="text-white text-opacity-75">
                   Sort Algorithm
@@ -47,6 +49,8 @@ const Header = () => {
                   aria-label="Algorithm Type"
                   bsPrefix="menu-header"
                   className="bg-transparent text-white text-opacity-75 mx-2"
+                  value={arraySize}
+                  onChange={(e) => setArraySize(e.target.value)}
                 >
                   {size.map((ele, index) => (
                     <option value={ele} key={index} className="text-black">
