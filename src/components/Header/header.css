@@ -1,0 +1,43 @@
+.menu-header {
+  border: none;
+  cursor: pointer;
+}
+
+.menu-header:focus-visible {
+  outline: none;
+}
+
+.menu-placeholder {
+  padding: 0.375rem 0 0.375rem 0.75rem;
+}
+
+.menu-button {
+  border: none;
+}
+
+.menu-button:focus,
+.offcanvas-header button:focus {
+  box-shadow: none;
+}
+
+.offcanvas-end {
+  width: 250px !important;
+}
+
+@media (max-width: 768px) {
+  .algo-dropdown {
+    max-width: 130px;
+    padding: 0.375rem 0;
+  }
+
+  .menu-button {
+    text-align: left;
+  }
+
+  .menu-header,
+  .menu-header option:first-child,
+  .menu-placeholder span,
+  .menu-button {
+    color: black !important;
+  }
+}
