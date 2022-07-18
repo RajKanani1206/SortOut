@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Navbar, Container, Offcanvas, Nav, Form, Button } from "react-bootstrap";
 import { ElementsContext } from "../ElementsContext";
-import "./header.css";
+import "./style.css";
 
 const Header = () => {
   const { arraySize, setArraySize, algorithm, setAlgorithm } = useContext(ElementsContext);
@@ -50,7 +50,7 @@ const Header = () => {
                   bsPrefix="menu-header"
                   className="bg-transparent text-white text-opacity-75 mx-2"
                   value={arraySize}
-                  onChange={(e) => setArraySize(e.target.value)}
+                  onChange={(e) => setArraySize(parseInt(e.target.value))}
                 >
                   {size.map((ele, index) => (
                     <option value={ele} key={index} className="text-black">
