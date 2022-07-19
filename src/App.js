@@ -44,7 +44,7 @@ const App = () => {
       value={{ array, setArray, arraySize, setArraySize, algorithm, setAlgorithm, trace, setTrace }}
     >
       <div className="app">
-        <Header />
+        <Header randomizeArray={() => generateRandomArray()} />
         <main className="app-body">
           <SortVisualizer array={array} trace={trace} colorKey={colorKey} description={description} />
         </main>
