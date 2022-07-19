@@ -2,12 +2,12 @@ import React from "react";
 import "./style.css";
 
 const Bar = ({ width, height, val, stateA, stateB, stateC, stateD, sorted, style }) => {
-  let classNames = "Bar";
-  if (sorted) classNames += " Bar_sorted";
-  if (stateD) classNames += " Bar_stateD";
-  else if (stateC) classNames += " Bar_stateC";
-  else if (stateB) classNames += " Bar_stateB";
-  else if (stateA) classNames += " Bar_stateA";
+  let classNames = "bar";
+  if (sorted) classNames += " bar-sorted";
+  if (stateD) classNames += " bar-stateD";
+  else if (stateC) classNames += " bar-stateC";
+  else if (stateB) classNames += " bar-stateB";
+  else if (stateA) classNames += " bar-stateA";
 
   let BarStyle = { ...style, width: `${width}%`, height: `${height}%` };
   if (stateA || stateB || stateC || stateD) {
@@ -17,7 +17,7 @@ const Bar = ({ width, height, val, stateA, stateB, stateC, stateD, sorted, style
 
   return (
     <div style={BarStyle} className={classNames}>
-      <span className="Bar__Text">{val}</span>
+      <span className="bar-text">{val}</span>
     </div>
   );
 };
