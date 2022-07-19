@@ -1,0 +1,104 @@
+.sort-visualizer {
+  width: auto;
+  padding: 0.5rem;
+  margin: 1rem 1rem;
+  transition: 0.5s ease-in-out;
+}
+
+.sort-chart {
+  min-height: 218px;
+  height: 40vh;
+  padding: 1rem;
+
+  background-color: rgb(199, 199, 204);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  transition: 0.75s ease-in-out;
+}
+
+.bar {
+  background-color: rgba(255, 255, 255, 0.87);
+  color: rgb(58, 58, 60);
+  display: flex;
+  flex-direction: column reverse;
+  align-items: flex-end;
+  transition: 125ms ease-in-out;
+}
+
+.bar-text {
+  margin: 0 auto 0.25rem;
+}
+
+.bar-sorted {
+  background-color: #66bb6a;
+}
+
+.bar-stateD {
+  background-color: #42a5f5;
+}
+
+.bar-stateC {
+  background-color: #ef5350;
+}
+
+.bar-stateB {
+  background-color: #f06292;
+}
+
+.bar-stateA {
+  background-color: #ffd54f;
+}
+
+.visualizer-controls {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.controls-btn {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  color: #fff;
+}
+
+.controls-btn:disabled {
+  color: rgb(225, 225, 225, 0.75);
+  cursor: pointer;
+}
+
+.icon-btn {
+  height: 18px;
+  width: 18px;
+  font-size: 18px;
+}
+
+.visualizerControls-icon {
+  height: 2rem !important;
+  width: 2rem !important;
+}
+
+.play-pause-button {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background-color: #8e99e6;
+}
+
+.play-pause-button:disabled {
+  background-color: rgb(225, 225, 225, 0.75);
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.playback-speed-select {
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0 15px 0 2px;
+}
+
+.playback-speed-select:focus-visible {
+  outline: none;
+}

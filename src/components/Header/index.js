@@ -3,7 +3,7 @@ import { Navbar, Container, Offcanvas, Nav, Form, Button } from "react-bootstrap
 import { ElementsContext } from "../ElementsContext";
 import "./style.css";
 
-const Header = () => {
+const Header = ({ randomizeArray }) => {
   const { arraySize, setArraySize, algorithm, setAlgorithm } = useContext(ElementsContext);
   const sortingAlgorithms = ["Bubble Sort", "Selection Sort", "Insertion Sort", "Merge Sort"];
   const size = ["5", "10", "25", "50", "75", "100"];
@@ -59,7 +59,11 @@ const Header = () => {
                   ))}
                 </Form.Select>
               </div>
-              <Button variant="plain" className="menu-button shadow-none text-white text-opacity-75">
+              <Button
+                variant="plain"
+                className="menu-button shadow-none text-white text-opacity-75"
+                onClick={() => randomizeArray()}
+              >
                 Randomize
               </Button>
             </Nav>

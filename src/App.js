@@ -3,6 +3,7 @@ import "./App.css";
 import Algorithm from "./components/Constants/Algorithm";
 import { ElementsContext } from "./components/ElementsContext";
 import Header from "./components/Header";
+import SortVisualizer from "./components/SortVisualizer";
 
 const App = () => {
   const [array, setArray] = useState([]);
@@ -42,8 +43,11 @@ const App = () => {
     <ElementsContext.Provider
       value={{ array, setArray, arraySize, setArraySize, algorithm, setAlgorithm, trace, setTrace }}
     >
-      <div>
-        <Header />
+      <div className="app">
+        <Header randomizeArray={() => generateRandomArray()} />
+        <main className="app-body">
+          <SortVisualizer array={array} trace={trace} colorKey={colorKey} description={description} />
+        </main>
       </div>
     </ElementsContext.Provider>
   );

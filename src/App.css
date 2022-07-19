@@ -2,3 +2,7 @@ body {
   background-color: #1f2937 !important;
   color: #fff !important;
 }
+
+.app {
+  text-align: center;
+}
