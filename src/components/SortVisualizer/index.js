@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ProgressBar from "./ProgressBar";
 import SortChart from "./SortChart";
 import "./style.css";
 import VisualizerControls from "./VisualizerControls";
@@ -90,6 +91,9 @@ const SortVisualizer = ({ array, trace, colorKey, description }) => {
         groupD={groupD}
         sortedIndices={sortedIndices}
       />
+      <div className="progress-bar mt-3">
+        <ProgressBar width={tracing.length > 0 ? (traceStep / (tracing.length - 1)) * 100 : 0} />
+      </div>
       <VisualizerControls
         onPlay={() => (traceStep === -1 ? run(tracing) : resume())}
         onPause={() => pause()}
