@@ -144,3 +144,48 @@
     transform: translateX(200.611057%);
   }
 }
+
+/* Color Keys */
+.color-key {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 1rem;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.color-key-item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 4rem;
+  padding: 4px;
+}
+
+.color-key-box {
+  flex-shrink: 0;
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+
+.color-key-unsorted {
+  border: 1px solid rgb(58, 58, 60);
+  background-color: #fff;
+}
+.color-key-sorted {
+  background-color: #338a3e;
+}
+.color-key-groupA {
+  background-color: #ffd54f;
+}
+.color-key-groupB {
+  background-color: #f06292;
+}
+.color-key-groupC {
+  background-color: #ef5350;
+}
+.color-key-groupD {
+  background-color: #42a5f5;
+}
