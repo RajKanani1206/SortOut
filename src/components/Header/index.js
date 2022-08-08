@@ -11,7 +11,7 @@ const Header = ({ randomizeArray }) => {
     <Navbar expand="md" className="mb-3" variant="dark">
       <Container>
         <Navbar.Brand className="d-flex align-items-center">
-          <img alt="Logo" src="images/Logo.png" width="50" height="50" className="d-inline-block" />
+          <img src="images/Logo.png" alt="Logo" width={50} height={50} className="d-inline-block" />
           <div className="mx-3 font-monospace">SortOut</div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} className="menu-button" />
