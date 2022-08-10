@@ -189,3 +189,10 @@
 .color-key-groupD {
   background-color: #42a5f5;
 }
+
+/* Description */
+@media (max-width: 767px) {
+  .description {
+    border-right: none !important;
+  }
+}

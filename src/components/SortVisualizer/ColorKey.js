@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { Container } from "react-bootstrap";
 
 const ColorKey = ({ colorKey }) => {
   const keySorted =
@@ -44,13 +45,13 @@ const ColorKey = ({ colorKey }) => {
   ) : null;
 
   return (
-    <div className="color-key">
+    <Container className="text-start">
       {keySorted}
       {keyA}
       {keyB}
       {keyC}
       {keyD}
-    </div>
+    </Container>
   );
 };
 

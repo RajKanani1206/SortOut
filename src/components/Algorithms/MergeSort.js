@@ -86,6 +86,10 @@ const MergeSort = (nums) => {
 export const MergeSortKey = createKey("Call Merge Sort", null, "Overwrite from axillary array");
 export const MergeSortDesc = {
   title: "Merge Sort",
-  description: <div></div>,
+  desc: "Merge Sort is a sorting algorithm based on the Divide et Impera technique, like Quick Sort. It can be implemented iteratively or recursively, using the Top-Down and Bottom-Up algorithms respectively. We represented the first one.",
+  worstCase: "O(n x logn)",
+  avgCase: " O(n x logn)",
+  bestCase: "O(n x logn)",
+  space: "O(n)",
 };
 export default MergeSort;
