@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ColorKey from "./ColorKey";
+import Description from "./Description";
 import ProgressBar from "./ProgressBar";
 import SortChart from "./SortChart";
 import "./style.css";
@@ -102,6 +103,7 @@ const SortVisualizer = ({ array, trace, colorKey, description }) => {
         playDisabled={(traceStep >= tracing.length - 1 && traceStep !== -1) || tracing.length <= 0}
       />
       <ColorKey colorKey={colorKey} />
+      <Description description={description} />
     </div>
   );
 };

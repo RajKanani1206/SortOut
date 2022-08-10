@@ -34,7 +34,11 @@ const InsertionSort = (nums) => {
 export const InsertionSortKey = createKey("Comparing", "Swapping", "Overwrite from memory");
 export const InsertionSortDesc = {
   title: "Insertion Sort",
-  description: <p></p>,
+  desc: "Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time. It's less performant than advanced sorting algorithms, but it can still have some advantages: it's really easy to implement and it's efficient on small data structures almost sorted.",
+  worstCase: "O(n²)",
+  avgCase: " O(n²)",
+  bestCase: "O(n)",
+  space: "O(1)",
 };
 
 export default InsertionSort;

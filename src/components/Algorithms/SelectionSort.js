@@ -40,7 +40,11 @@ export const SelectionSortKey = createKey("Comparing", "Swapping");
 
 export const SelectionSortDesc = {
   title: "Selection Sort",
-  description: <p></p>,
+  desc: "Selection Sort is an iterative and in-place sorting algorithm that divides the data structure in two sublists: the ordered one, and the unordered one. The algorithm loops for all the elements of the data structure and for every cycle picks the smallest element of the unordered sublist and adds it to the sorted sublist, progressively filling it.",
+  worstCase: "O(n²)",
+  avgCase: "O(n²)",
+  bestCase: "O(n²)",
+  space: "O(1)",
 };
 
 export default SelectionSort;
