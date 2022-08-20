@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Algorithm from "./components/Constants/Algorithm";
 import { ElementsContext } from "./components/ElementsContext";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import SortVisualizer from "./components/SortVisualizer";
 
@@ -33,10 +34,12 @@ const App = () => {
 
   useEffect(() => {
     generateRandomArray();
+    // eslint-disable-next-line
   }, [arraySize, algorithm]);
 
   useEffect(() => {
     createTrace();
+    // eslint-disable-next-line
   }, [array]);
 
   return (
@@ -48,6 +51,7 @@ const App = () => {
         <main className="app-body">
           <SortVisualizer array={array} trace={trace} colorKey={colorKey} description={description} />
         </main>
+        <Footer />
       </div>
     </ElementsContext.Provider>
   );
