@@ -23,6 +23,7 @@ const SortVisualizer = ({ array, trace, colorKey, description }) => {
     reset(array);
     clearTimeouts();
     setTracing(trace);
+    // eslint-disable-next-line
   }, [array, trace]);
 
   const reset = (array) => {

@@ -1,4 +1,3 @@
-import React from "react";
 import { newTrace, addToTrace, createKey } from "./helpers";
 
 const InsertionSort = (nums) => {

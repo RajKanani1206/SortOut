@@ -1,4 +1,3 @@
-import React from "react";
 import { swap, newTrace, addToTrace, lastSorted, createKey } from "./helpers";
 
 const SelectionSort = (nums) => {
