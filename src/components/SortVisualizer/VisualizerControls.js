@@ -1,5 +1,5 @@
 import React from "react";
-import { MdPlayArrow as Play, MdPause as Pause } from "react-icons/md";
+import { MdPlayArrow as Play, MdPause as Pause, MdSkipPrevious as Backward } from "react-icons/md";
 import "./style.css";
 
 const renderIcon = (icon, iconClass) => {
@@ -7,11 +7,14 @@ const renderIcon = (icon, iconClass) => {
   return <ICON className={iconClass} />;
 };
 
-const VisualizerControls = ({ onPlay, onPause, playing, playDisabled }) => {
+const VisualizerControls = ({ onPlay, onPause, playing, playDisabled, onBackward, backwardDisabled }) => {
   return (
     <div className="visualizer-controls">
+      <button className="controls-btn" onClick={onBackward} disabled={backwardDisabled}>
+        {renderIcon(Backward, "icon-btn visualizerControls-icon")}
+      </button>
       <button
-        className="controls-btn play-pause-button"
+        className="controls-btn play-pause-button mx-4"
         onClick={() => (playing ? onPause() : onPlay())}
         disabled={!playing && playDisabled}
       >
