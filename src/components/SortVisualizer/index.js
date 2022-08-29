@@ -83,6 +83,16 @@ const SortVisualizer = ({ array, trace, colorKey, description }) => {
     run(trace);
   };
 
+  const stepBackward = () => {
+    const trace = tracing;
+    const step = traceStep;
+    if (step > 0) {
+      const item = trace[step - 1];
+      setTraceStep(step - 1);
+      changeVisualState(item);
+    }
+  };
+
   return (
     <div className="sort-visualizer">
       <SortChart
@@ -102,6 +112,8 @@ const SortVisualizer = ({ array, trace, colorKey, description }) => {
         onPause={() => pause()}
         playing={timeoutIds.length > 0}
         playDisabled={(traceStep >= tracing.length - 1 && traceStep !== -1) || tracing.length <= 0}
+        onBackward={() => stepBackward()}
+        backwardDisabled={traceStep <= 0}
       />
       <ColorKey colorKey={colorKey} />
       <Description description={description} />
