@@ -1,5 +1,10 @@
 import React from "react";
-import { MdPlayArrow as Play, MdPause as Pause, MdSkipPrevious as Backward } from "react-icons/md";
+import {
+  MdPlayArrow as Play,
+  MdPause as Pause,
+  MdSkipPrevious as Backward,
+  MdSkipNext as Forward,
+} from "react-icons/md";
 import "./style.css";
 
 const renderIcon = (icon, iconClass) => {
@@ -7,7 +12,16 @@ const renderIcon = (icon, iconClass) => {
   return <ICON className={iconClass} />;
 };
 
-const VisualizerControls = ({ onPlay, onPause, playing, playDisabled, onBackward, backwardDisabled }) => {
+const VisualizerControls = ({
+  onPlay,
+  onPause,
+  playing,
+  playDisabled,
+  onBackward,
+  backwardDisabled,
+  onForward,
+  forwardDisabled,
+}) => {
   return (
     <div className="visualizer-controls">
       <button className="controls-btn" onClick={onBackward} disabled={backwardDisabled}>
@@ -21,6 +35,9 @@ const VisualizerControls = ({ onPlay, onPause, playing, playDisabled, onBackward
         {playing
           ? renderIcon(Pause, "icon-btn visualizerControls-icon")
           : renderIcon(Play, "icon-btn visualizerControls-icon")}
+      </button>
+      <button className="controls-btn" onClick={onForward} disabled={forwardDisabled}>
+        {renderIcon(Forward, "icon-btn visualizerControls-icon")}
       </button>
     </div>
   );
