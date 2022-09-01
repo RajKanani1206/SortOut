@@ -9,6 +9,7 @@ import VisualizerControls from "./VisualizerControls";
 const SortVisualizer = ({ array, trace, colorKey, description }) => {
   const [tracing, setTracing] = useState([]);
   const [traceStep, setTraceStep] = useState(-1);
+  const [originalArray, setOriginalArray] = useState([]);
   const [newArray, setNewArray] = useState([]);
   const [groupA, setGroupA] = useState([]);
   const [groupB, setGroupB] = useState([]);
@@ -35,6 +36,7 @@ const SortVisualizer = ({ array, trace, colorKey, description }) => {
     setGroupC([]);
     setGroupD([]);
     setSortedIndices([]);
+    setOriginalArray([...array]);
   };
 
   const clearTimeouts = () => {
@@ -102,6 +104,13 @@ const SortVisualizer = ({ array, trace, colorKey, description }) => {
     }
   };
 
+  const repeat = () => {
+    clearTimeouts();
+    setNewArray([...originalArray]);
+    setTraceStep(-1);
+    run(tracing);
+  };
+
   return (
     <div className="sort-visualizer">
       <SortChart
@@ -125,6 +134,8 @@ const SortVisualizer = ({ array, trace, colorKey, description }) => {
         backwardDisabled={traceStep <= 0}
         onForward={() => stepForward()}
         forwardDisabled={traceStep >= tracing.length - 1}
+        onRepeat={() => repeat()}
+        repeatDisabled={traceStep <= 0}
       />
       <ColorKey colorKey={colorKey} />
       <Description description={description} />
