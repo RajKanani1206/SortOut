@@ -4,6 +4,7 @@ import {
   MdPause as Pause,
   MdSkipPrevious as Backward,
   MdSkipNext as Forward,
+  MdRepeat as Repeat,
 } from "react-icons/md";
 import "./style.css";
 
@@ -21,14 +22,19 @@ const VisualizerControls = ({
   backwardDisabled,
   onForward,
   forwardDisabled,
+  onRepeat,
+  repeatDisabled,
 }) => {
   return (
     <div className="visualizer-controls">
-      <button className="controls-btn" onClick={onBackward} disabled={backwardDisabled}>
+      <button className="controls-btn" onClick={onRepeat} disabled={repeatDisabled}>
+        {renderIcon(Repeat, "icon-btn visualizerControls-icon")}
+      </button>
+      <button className="controls-btn mx-4" onClick={onBackward} disabled={backwardDisabled}>
         {renderIcon(Backward, "icon-btn visualizerControls-icon")}
       </button>
       <button
-        className="controls-btn play-pause-button mx-4"
+        className="controls-btn play-pause-button"
         onClick={() => (playing ? onPause() : onPlay())}
         disabled={!playing && playDisabled}
       >
@@ -36,7 +42,7 @@ const VisualizerControls = ({
           ? renderIcon(Pause, "icon-btn visualizerControls-icon")
           : renderIcon(Play, "icon-btn visualizerControls-icon")}
       </button>
-      <button className="controls-btn" onClick={onForward} disabled={forwardDisabled}>
+      <button className="controls-btn mx-4" onClick={onForward} disabled={forwardDisabled}>
         {renderIcon(Forward, "icon-btn visualizerControls-icon")}
       </button>
     </div>
