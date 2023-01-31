@@ -31,10 +31,10 @@ const Header = ({ randomizeArray }) => {
                 aria-label="Algorithm Type"
                 bsPrefix="menu-header"
                 className="bg-transparent text-white text-opacity-75 mx-2 algo-dropdown"
-                value={algorithm}
+                value={algorithm || "Sort Algorithm"}
                 onChange={(e) => setAlgorithm(e.target.value)}
               >
-                <option selected disabled className="text-white text-opacity-75">
+                <option disabled className="text-white text-opacity-75">
                   Sort Algorithm
                 </option>
                 {sortingAlgorithms.map((ele, index) => (

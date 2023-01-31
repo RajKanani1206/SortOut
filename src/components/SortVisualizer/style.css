@@ -93,10 +93,6 @@
 .playback-speed-select {
   border: none;
   cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  padding: 0 15px 0 2px;
 }
 
 .playback-speed-select:focus-visible {
