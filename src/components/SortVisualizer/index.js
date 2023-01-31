@@ -18,6 +18,7 @@ const SortVisualizer = ({ array, trace, colorKey, description }) => {
   const [sortedIndices, setSortedIndices] = useState([]);
   const [timeoutIds, setTimeoutIds] = useState([]);
   const [playbackSpeed, setPlaybackSpeed] = useState(1);
+  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     // conditions might change
@@ -111,6 +112,21 @@ const SortVisualizer = ({ array, trace, colorKey, description }) => {
     run(tracing);
   };
 
+  const adjustPlaybackSpeed = async (speed) => {
+    setPlaying(timeoutIds.length > 0);
+    pause();
+    const updatedSpeed = Number(speed.split("x")[0]);
+    console.log("updatedSpeed", updatedSpeed);
+    setPlaybackSpeed(updatedSpeed);
+  };
+
+  useEffect(() => {
+    if (playing) {
+      resume();
+    }
+    // eslint-disable-next-line
+  }, [playbackSpeed]);
+
   return (
     <div className="sort-visualizer">
       <SortChart
@@ -136,6 +152,8 @@ const SortVisualizer = ({ array, trace, colorKey, description }) => {
         forwardDisabled={traceStep >= tracing.length - 1}
         onRepeat={() => repeat()}
         repeatDisabled={traceStep <= 0}
+        onAdjustSpeed={adjustPlaybackSpeed}
+        playbackSpeed={playbackSpeed}
       />
       <ColorKey colorKey={colorKey} />
       <Description description={description} />
